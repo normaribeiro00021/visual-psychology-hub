@@ -10,33 +10,270 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AdminRouteImport } from './routes/admin'
+import { Route as AjudaRouteImport } from './routes/ajuda'
+import { Route as AtualizacoesRouteImport } from './routes/atualizacoes'
+import { Route as BibliotecaRouteImport } from './routes/biblioteca'
+import { Route as BonusRouteImport } from './routes/bonus'
+import { Route as BuscarRouteImport } from './routes/buscar'
+import { Route as CasosRouteImport } from './routes/casos'
+import { Route as ContaRouteImport } from './routes/conta'
+import { Route as EntrarRouteImport } from './routes/entrar'
+import { Route as FavoritosRouteImport } from './routes/favoritos'
+import { Route as LojaRouteImport } from './routes/loja'
+import { Route as MapasRouteImport } from './routes/mapas'
+import { Route as PoliticaDeUsoRouteImport } from './routes/politica-de-uso'
+import { Route as PrivacidadeRouteImport } from './routes/privacidade'
+import { Route as RedefinirSenhaRouteImport } from './routes/redefinir-senha'
+import { Route as TermosRouteImport } from './routes/termos'
+import { Route as MaterialIdRouteImport } from './routes/material/$id'
+import { Route as MaterialIdLerRouteImport } from './routes/material/$id/ler'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdminRoute = AdminRouteImport.update({
+  id: '/admin',
+  path: '/admin',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AjudaRoute = AjudaRouteImport.update({
+  id: '/ajuda',
+  path: '/ajuda',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AtualizacoesRoute = AtualizacoesRouteImport.update({
+  id: '/atualizacoes',
+  path: '/atualizacoes',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BibliotecaRoute = BibliotecaRouteImport.update({
+  id: '/biblioteca',
+  path: '/biblioteca',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BonusRoute = BonusRouteImport.update({
+  id: '/bonus',
+  path: '/bonus',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BuscarRoute = BuscarRouteImport.update({
+  id: '/buscar',
+  path: '/buscar',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CasosRoute = CasosRouteImport.update({
+  id: '/casos',
+  path: '/casos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContaRoute = ContaRouteImport.update({
+  id: '/conta',
+  path: '/conta',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EntrarRoute = EntrarRouteImport.update({
+  id: '/entrar',
+  path: '/entrar',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FavoritosRoute = FavoritosRouteImport.update({
+  id: '/favoritos',
+  path: '/favoritos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LojaRoute = LojaRouteImport.update({
+  id: '/loja',
+  path: '/loja',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MapasRoute = MapasRouteImport.update({
+  id: '/mapas',
+  path: '/mapas',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PoliticaDeUsoRoute = PoliticaDeUsoRouteImport.update({
+  id: '/politica-de-uso',
+  path: '/politica-de-uso',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacidadeRoute = PrivacidadeRouteImport.update({
+  id: '/privacidade',
+  path: '/privacidade',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RedefinirSenhaRoute = RedefinirSenhaRouteImport.update({
+  id: '/redefinir-senha',
+  path: '/redefinir-senha',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TermosRoute = TermosRouteImport.update({
+  id: '/termos',
+  path: '/termos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MaterialIdRoute = MaterialIdRouteImport.update({
+  id: '/material/$id',
+  path: '/material/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MaterialIdLerRoute = MaterialIdLerRouteImport.update({
+  id: '/ler',
+  path: '/ler',
+  getParentRoute: () => MaterialIdRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/admin': typeof AdminRoute
+  '/ajuda': typeof AjudaRoute
+  '/atualizacoes': typeof AtualizacoesRoute
+  '/biblioteca': typeof BibliotecaRoute
+  '/bonus': typeof BonusRoute
+  '/buscar': typeof BuscarRoute
+  '/casos': typeof CasosRoute
+  '/conta': typeof ContaRoute
+  '/entrar': typeof EntrarRoute
+  '/favoritos': typeof FavoritosRoute
+  '/loja': typeof LojaRoute
+  '/mapas': typeof MapasRoute
+  '/politica-de-uso': typeof PoliticaDeUsoRoute
+  '/privacidade': typeof PrivacidadeRoute
+  '/redefinir-senha': typeof RedefinirSenhaRoute
+  '/termos': typeof TermosRoute
+  '/material/$id': typeof MaterialIdRouteWithChildren
+  '/material/$id/ler': typeof MaterialIdLerRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/admin': typeof AdminRoute
+  '/ajuda': typeof AjudaRoute
+  '/atualizacoes': typeof AtualizacoesRoute
+  '/biblioteca': typeof BibliotecaRoute
+  '/bonus': typeof BonusRoute
+  '/buscar': typeof BuscarRoute
+  '/casos': typeof CasosRoute
+  '/conta': typeof ContaRoute
+  '/entrar': typeof EntrarRoute
+  '/favoritos': typeof FavoritosRoute
+  '/loja': typeof LojaRoute
+  '/mapas': typeof MapasRoute
+  '/politica-de-uso': typeof PoliticaDeUsoRoute
+  '/privacidade': typeof PrivacidadeRoute
+  '/redefinir-senha': typeof RedefinirSenhaRoute
+  '/termos': typeof TermosRoute
+  '/material/$id': typeof MaterialIdRouteWithChildren
+  '/material/$id/ler': typeof MaterialIdLerRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/admin': typeof AdminRoute
+  '/ajuda': typeof AjudaRoute
+  '/atualizacoes': typeof AtualizacoesRoute
+  '/biblioteca': typeof BibliotecaRoute
+  '/bonus': typeof BonusRoute
+  '/buscar': typeof BuscarRoute
+  '/casos': typeof CasosRoute
+  '/conta': typeof ContaRoute
+  '/entrar': typeof EntrarRoute
+  '/favoritos': typeof FavoritosRoute
+  '/loja': typeof LojaRoute
+  '/mapas': typeof MapasRoute
+  '/politica-de-uso': typeof PoliticaDeUsoRoute
+  '/privacidade': typeof PrivacidadeRoute
+  '/redefinir-senha': typeof RedefinirSenhaRoute
+  '/termos': typeof TermosRoute
+  '/material/$id': typeof MaterialIdRouteWithChildren
+  '/material/$id/ler': typeof MaterialIdLerRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/admin'
+    | '/ajuda'
+    | '/atualizacoes'
+    | '/biblioteca'
+    | '/bonus'
+    | '/buscar'
+    | '/casos'
+    | '/conta'
+    | '/entrar'
+    | '/favoritos'
+    | '/loja'
+    | '/mapas'
+    | '/politica-de-uso'
+    | '/privacidade'
+    | '/redefinir-senha'
+    | '/termos'
+    | '/material/$id'
+    | '/material/$id/ler'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/admin'
+    | '/ajuda'
+    | '/atualizacoes'
+    | '/biblioteca'
+    | '/bonus'
+    | '/buscar'
+    | '/casos'
+    | '/conta'
+    | '/entrar'
+    | '/favoritos'
+    | '/loja'
+    | '/mapas'
+    | '/politica-de-uso'
+    | '/privacidade'
+    | '/redefinir-senha'
+    | '/termos'
+    | '/material/$id'
+    | '/material/$id/ler'
+  id:
+    | '__root__'
+    | '/'
+    | '/admin'
+    | '/ajuda'
+    | '/atualizacoes'
+    | '/biblioteca'
+    | '/bonus'
+    | '/buscar'
+    | '/casos'
+    | '/conta'
+    | '/entrar'
+    | '/favoritos'
+    | '/loja'
+    | '/mapas'
+    | '/politica-de-uso'
+    | '/privacidade'
+    | '/redefinir-senha'
+    | '/termos'
+    | '/material/$id'
+    | '/material/$id/ler'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AdminRoute: typeof AdminRoute
+  AjudaRoute: typeof AjudaRoute
+  AtualizacoesRoute: typeof AtualizacoesRoute
+  BibliotecaRoute: typeof BibliotecaRoute
+  BonusRoute: typeof BonusRoute
+  BuscarRoute: typeof BuscarRoute
+  CasosRoute: typeof CasosRoute
+  ContaRoute: typeof ContaRoute
+  EntrarRoute: typeof EntrarRoute
+  FavoritosRoute: typeof FavoritosRoute
+  LojaRoute: typeof LojaRoute
+  MapasRoute: typeof MapasRoute
+  PoliticaDeUsoRoute: typeof PoliticaDeUsoRoute
+  PrivacidadeRoute: typeof PrivacidadeRoute
+  RedefinirSenhaRoute: typeof RedefinirSenhaRoute
+  TermosRoute: typeof TermosRoute
+  MaterialIdRoute: typeof MaterialIdRouteWithChildren
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +285,166 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/admin': {
+      id: '/admin'
+      path: '/admin'
+      fullPath: '/admin'
+      preLoaderRoute: typeof AdminRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ajuda': {
+      id: '/ajuda'
+      path: '/ajuda'
+      fullPath: '/ajuda'
+      preLoaderRoute: typeof AjudaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/atualizacoes': {
+      id: '/atualizacoes'
+      path: '/atualizacoes'
+      fullPath: '/atualizacoes'
+      preLoaderRoute: typeof AtualizacoesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/biblioteca': {
+      id: '/biblioteca'
+      path: '/biblioteca'
+      fullPath: '/biblioteca'
+      preLoaderRoute: typeof BibliotecaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/bonus': {
+      id: '/bonus'
+      path: '/bonus'
+      fullPath: '/bonus'
+      preLoaderRoute: typeof BonusRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/buscar': {
+      id: '/buscar'
+      path: '/buscar'
+      fullPath: '/buscar'
+      preLoaderRoute: typeof BuscarRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/casos': {
+      id: '/casos'
+      path: '/casos'
+      fullPath: '/casos'
+      preLoaderRoute: typeof CasosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/conta': {
+      id: '/conta'
+      path: '/conta'
+      fullPath: '/conta'
+      preLoaderRoute: typeof ContaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/entrar': {
+      id: '/entrar'
+      path: '/entrar'
+      fullPath: '/entrar'
+      preLoaderRoute: typeof EntrarRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/favoritos': {
+      id: '/favoritos'
+      path: '/favoritos'
+      fullPath: '/favoritos'
+      preLoaderRoute: typeof FavoritosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/loja': {
+      id: '/loja'
+      path: '/loja'
+      fullPath: '/loja'
+      preLoaderRoute: typeof LojaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mapas': {
+      id: '/mapas'
+      path: '/mapas'
+      fullPath: '/mapas'
+      preLoaderRoute: typeof MapasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/politica-de-uso': {
+      id: '/politica-de-uso'
+      path: '/politica-de-uso'
+      fullPath: '/politica-de-uso'
+      preLoaderRoute: typeof PoliticaDeUsoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacidade': {
+      id: '/privacidade'
+      path: '/privacidade'
+      fullPath: '/privacidade'
+      preLoaderRoute: typeof PrivacidadeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/redefinir-senha': {
+      id: '/redefinir-senha'
+      path: '/redefinir-senha'
+      fullPath: '/redefinir-senha'
+      preLoaderRoute: typeof RedefinirSenhaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/termos': {
+      id: '/termos'
+      path: '/termos'
+      fullPath: '/termos'
+      preLoaderRoute: typeof TermosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/material/$id': {
+      id: '/material/$id'
+      path: '/material/$id'
+      fullPath: '/material/$id'
+      preLoaderRoute: typeof MaterialIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/material/$id/ler': {
+      id: '/material/$id/ler'
+      path: '/ler'
+      fullPath: '/material/$id/ler'
+      preLoaderRoute: typeof MaterialIdLerRouteImport
+      parentRoute: typeof MaterialIdRoute
+    }
   }
 }
 
+interface MaterialIdRouteChildren {
+  MaterialIdLerRoute: typeof MaterialIdLerRoute
+}
+
+const MaterialIdRouteChildren: MaterialIdRouteChildren = {
+  MaterialIdLerRoute: MaterialIdLerRoute,
+}
+
+const MaterialIdRouteWithChildren = MaterialIdRoute._addFileChildren(
+  MaterialIdRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AdminRoute: AdminRoute,
+  AjudaRoute: AjudaRoute,
+  AtualizacoesRoute: AtualizacoesRoute,
+  BibliotecaRoute: BibliotecaRoute,
+  BonusRoute: BonusRoute,
+  BuscarRoute: BuscarRoute,
+  CasosRoute: CasosRoute,
+  ContaRoute: ContaRoute,
+  EntrarRoute: EntrarRoute,
+  FavoritosRoute: FavoritosRoute,
+  LojaRoute: LojaRoute,
+  MapasRoute: MapasRoute,
+  PoliticaDeUsoRoute: PoliticaDeUsoRoute,
+  PrivacidadeRoute: PrivacidadeRoute,
+  RedefinirSenhaRoute: RedefinirSenhaRoute,
+  TermosRoute: TermosRoute,
+  MaterialIdRoute: MaterialIdRouteWithChildren,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

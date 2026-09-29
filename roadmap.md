@@ -1,0 +1,6 @@
+- [x] Confirmar identidade do aluno pelo e-mail de compra, sem perfil adicional.
+- [x] Criar estrutura de dados e permissões de acesso.
+- [x] Construir biblioteca, páginas e controles com dados demonstrativos.
+- [ ] Conectar produtos e PDFs reais, compras, Passe Vitalício e checkout externo (aguarda artes, PDFs e plataforma/segredo do checkout).
+- [x] Configurar instalação e uso offline seguro (sem cache de PDFs protegidos).
+- [x] Verificar experiência desktop e mobile.
