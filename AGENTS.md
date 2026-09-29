@@ -13,3 +13,6 @@
 - Keep protected PDFs in private `protected-materials` storage and rely on entitlement-aware storage policy; public URLs would bypass purchase access.
 - Register the generated PWA worker only outside development and Lovable previews; cached app shells must never make previews stale.
 - Validate admin role inside every privileged server function before using the admin client; a hidden admin page is not an authorization boundary.
+
+- Keep demo cards labeled as preview; signed-in actual entitlements are shown separately so mock ownership never claims a purchase.
+- Use a provider-verified webhook for checkout events before granting entitlements; checkout platform and signing secret must be supplied before production integration.

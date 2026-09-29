@@ -156,3 +156,5 @@
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition-duration:.01ms!important;animation-duration:.01ms!important}}
 
 .real-library{padding:22px;background:var(--surface);border:1px solid var(--border);margin:25px 0}.real-library>div{display:flex;justify-content:space-between;gap:20px;padding:13px 0;border-bottom:1px solid var(--border);font-size:13px}.real-library>div span,.real-library>p{color:var(--muted-foreground);font-size:12px}.detail-cover{z-index:0}.detail-cover .cover-bottom strong{overflow-wrap:anywhere}.detail-text{position:relative;z-index:2}@media(max-width:700px){.detail-cover{right:-105px;opacity:.3;transform:rotate(6deg) scale(.92)}.detail-text{margin-top:270px}.real-library>div{flex-direction:column;gap:5px}}
+
+@media(max-width:700px){.detail-cover{right:-65px;top:90px;width:250px;opacity:.22;transform:rotate(6deg)}.detail-text{margin-top:270px}.detail-text h1{font-size:36px;overflow-wrap:anywhere}.detail-hero{min-height:720px}}
