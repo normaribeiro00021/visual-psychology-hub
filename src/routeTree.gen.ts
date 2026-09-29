@@ -15,9 +15,13 @@ import { Route as BibliotecaRouteImport } from './routes/biblioteca'
 import { Route as BonusRouteImport } from './routes/bonus'
 import { Route as BuscarRouteImport } from './routes/buscar'
 import { Route as CasosRouteImport } from './routes/casos'
+import { Route as EntrarRouteImport } from './routes/entrar'
 import { Route as FavoritosRouteImport } from './routes/favoritos'
 import { Route as LojaRouteImport } from './routes/loja'
 import { Route as MapasRouteImport } from './routes/mapas'
+import { Route as RedefinirSenhaRouteImport } from './routes/redefinir-senha'
+import { Route as MaterialIdRouteImport } from './routes/material/$id'
+import { Route as MaterialIdLerRouteImport } from './routes/material/$id/ler'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -49,6 +53,11 @@ const CasosRoute = CasosRouteImport.update({
   path: '/casos',
   getParentRoute: () => rootRouteImport,
 } as any)
+const EntrarRoute = EntrarRouteImport.update({
+  id: '/entrar',
+  path: '/entrar',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const FavoritosRoute = FavoritosRouteImport.update({
   id: '/favoritos',
   path: '/favoritos',
@@ -64,6 +73,21 @@ const MapasRoute = MapasRouteImport.update({
   path: '/mapas',
   getParentRoute: () => rootRouteImport,
 } as any)
+const RedefinirSenhaRoute = RedefinirSenhaRouteImport.update({
+  id: '/redefinir-senha',
+  path: '/redefinir-senha',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MaterialIdRoute = MaterialIdRouteImport.update({
+  id: '/material/$id',
+  path: '/material/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MaterialIdLerRoute = MaterialIdLerRouteImport.update({
+  id: '/ler',
+  path: '/ler',
+  getParentRoute: () => MaterialIdRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -72,9 +96,13 @@ export interface FileRoutesByFullPath {
   '/bonus': typeof BonusRoute
   '/buscar': typeof BuscarRoute
   '/casos': typeof CasosRoute
+  '/entrar': typeof EntrarRoute
   '/favoritos': typeof FavoritosRoute
   '/loja': typeof LojaRoute
   '/mapas': typeof MapasRoute
+  '/redefinir-senha': typeof RedefinirSenhaRoute
+  '/material/$id': typeof MaterialIdRouteWithChildren
+  '/material/$id/ler': typeof MaterialIdLerRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -83,9 +111,13 @@ export interface FileRoutesByTo {
   '/bonus': typeof BonusRoute
   '/buscar': typeof BuscarRoute
   '/casos': typeof CasosRoute
+  '/entrar': typeof EntrarRoute
   '/favoritos': typeof FavoritosRoute
   '/loja': typeof LojaRoute
   '/mapas': typeof MapasRoute
+  '/redefinir-senha': typeof RedefinirSenhaRoute
+  '/material/$id': typeof MaterialIdRouteWithChildren
+  '/material/$id/ler': typeof MaterialIdLerRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -95,9 +127,13 @@ export interface FileRoutesById {
   '/bonus': typeof BonusRoute
   '/buscar': typeof BuscarRoute
   '/casos': typeof CasosRoute
+  '/entrar': typeof EntrarRoute
   '/favoritos': typeof FavoritosRoute
   '/loja': typeof LojaRoute
   '/mapas': typeof MapasRoute
+  '/redefinir-senha': typeof RedefinirSenhaRoute
+  '/material/$id': typeof MaterialIdRouteWithChildren
+  '/material/$id/ler': typeof MaterialIdLerRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -108,9 +144,13 @@ export interface FileRouteTypes {
     | '/bonus'
     | '/buscar'
     | '/casos'
+    | '/entrar'
     | '/favoritos'
     | '/loja'
     | '/mapas'
+    | '/redefinir-senha'
+    | '/material/$id'
+    | '/material/$id/ler'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -119,9 +159,13 @@ export interface FileRouteTypes {
     | '/bonus'
     | '/buscar'
     | '/casos'
+    | '/entrar'
     | '/favoritos'
     | '/loja'
     | '/mapas'
+    | '/redefinir-senha'
+    | '/material/$id'
+    | '/material/$id/ler'
   id:
     | '__root__'
     | '/'
@@ -130,9 +174,13 @@ export interface FileRouteTypes {
     | '/bonus'
     | '/buscar'
     | '/casos'
+    | '/entrar'
     | '/favoritos'
     | '/loja'
     | '/mapas'
+    | '/redefinir-senha'
+    | '/material/$id'
+    | '/material/$id/ler'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -142,9 +190,12 @@ export interface RootRouteChildren {
   BonusRoute: typeof BonusRoute
   BuscarRoute: typeof BuscarRoute
   CasosRoute: typeof CasosRoute
+  EntrarRoute: typeof EntrarRoute
   FavoritosRoute: typeof FavoritosRoute
   LojaRoute: typeof LojaRoute
   MapasRoute: typeof MapasRoute
+  RedefinirSenhaRoute: typeof RedefinirSenhaRoute
+  MaterialIdRoute: typeof MaterialIdRouteWithChildren
 }
 
 declare module '@tanstack/react-router' {
@@ -191,6 +242,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CasosRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/entrar': {
+      id: '/entrar'
+      path: '/entrar'
+      fullPath: '/entrar'
+      preLoaderRoute: typeof EntrarRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/favoritos': {
       id: '/favoritos'
       path: '/favoritos'
@@ -212,8 +270,41 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MapasRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/redefinir-senha': {
+      id: '/redefinir-senha'
+      path: '/redefinir-senha'
+      fullPath: '/redefinir-senha'
+      preLoaderRoute: typeof RedefinirSenhaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/material/$id': {
+      id: '/material/$id'
+      path: '/material/$id'
+      fullPath: '/material/$id'
+      preLoaderRoute: typeof MaterialIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/material/$id/ler': {
+      id: '/material/$id/ler'
+      path: '/ler'
+      fullPath: '/material/$id/ler'
+      preLoaderRoute: typeof MaterialIdLerRouteImport
+      parentRoute: typeof MaterialIdRoute
+    }
   }
 }
+
+interface MaterialIdRouteChildren {
+  MaterialIdLerRoute: typeof MaterialIdLerRoute
+}
+
+const MaterialIdRouteChildren: MaterialIdRouteChildren = {
+  MaterialIdLerRoute: MaterialIdLerRoute,
+}
+
+const MaterialIdRouteWithChildren = MaterialIdRoute._addFileChildren(
+  MaterialIdRouteChildren,
+)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
@@ -222,9 +313,12 @@ const rootRouteChildren: RootRouteChildren = {
   BonusRoute: BonusRoute,
   BuscarRoute: BuscarRoute,
   CasosRoute: CasosRoute,
+  EntrarRoute: EntrarRoute,
   FavoritosRoute: FavoritosRoute,
   LojaRoute: LojaRoute,
   MapasRoute: MapasRoute,
+  RedefinirSenhaRoute: RedefinirSenhaRoute,
+  MaterialIdRoute: MaterialIdRouteWithChildren,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
