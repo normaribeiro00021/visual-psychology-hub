@@ -10,33 +10,141 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AtualizacoesRouteImport } from './routes/atualizacoes'
+import { Route as BibliotecaRouteImport } from './routes/biblioteca'
+import { Route as BonusRouteImport } from './routes/bonus'
+import { Route as BuscarRouteImport } from './routes/buscar'
+import { Route as CasosRouteImport } from './routes/casos'
+import { Route as FavoritosRouteImport } from './routes/favoritos'
+import { Route as LojaRouteImport } from './routes/loja'
+import { Route as MapasRouteImport } from './routes/mapas'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AtualizacoesRoute = AtualizacoesRouteImport.update({
+  id: '/atualizacoes',
+  path: '/atualizacoes',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BibliotecaRoute = BibliotecaRouteImport.update({
+  id: '/biblioteca',
+  path: '/biblioteca',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BonusRoute = BonusRouteImport.update({
+  id: '/bonus',
+  path: '/bonus',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BuscarRoute = BuscarRouteImport.update({
+  id: '/buscar',
+  path: '/buscar',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CasosRoute = CasosRouteImport.update({
+  id: '/casos',
+  path: '/casos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FavoritosRoute = FavoritosRouteImport.update({
+  id: '/favoritos',
+  path: '/favoritos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LojaRoute = LojaRouteImport.update({
+  id: '/loja',
+  path: '/loja',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MapasRoute = MapasRouteImport.update({
+  id: '/mapas',
+  path: '/mapas',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/atualizacoes': typeof AtualizacoesRoute
+  '/biblioteca': typeof BibliotecaRoute
+  '/bonus': typeof BonusRoute
+  '/buscar': typeof BuscarRoute
+  '/casos': typeof CasosRoute
+  '/favoritos': typeof FavoritosRoute
+  '/loja': typeof LojaRoute
+  '/mapas': typeof MapasRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/atualizacoes': typeof AtualizacoesRoute
+  '/biblioteca': typeof BibliotecaRoute
+  '/bonus': typeof BonusRoute
+  '/buscar': typeof BuscarRoute
+  '/casos': typeof CasosRoute
+  '/favoritos': typeof FavoritosRoute
+  '/loja': typeof LojaRoute
+  '/mapas': typeof MapasRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/atualizacoes': typeof AtualizacoesRoute
+  '/biblioteca': typeof BibliotecaRoute
+  '/bonus': typeof BonusRoute
+  '/buscar': typeof BuscarRoute
+  '/casos': typeof CasosRoute
+  '/favoritos': typeof FavoritosRoute
+  '/loja': typeof LojaRoute
+  '/mapas': typeof MapasRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/atualizacoes'
+    | '/biblioteca'
+    | '/bonus'
+    | '/buscar'
+    | '/casos'
+    | '/favoritos'
+    | '/loja'
+    | '/mapas'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/atualizacoes'
+    | '/biblioteca'
+    | '/bonus'
+    | '/buscar'
+    | '/casos'
+    | '/favoritos'
+    | '/loja'
+    | '/mapas'
+  id:
+    | '__root__'
+    | '/'
+    | '/atualizacoes'
+    | '/biblioteca'
+    | '/bonus'
+    | '/buscar'
+    | '/casos'
+    | '/favoritos'
+    | '/loja'
+    | '/mapas'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AtualizacoesRoute: typeof AtualizacoesRoute
+  BibliotecaRoute: typeof BibliotecaRoute
+  BonusRoute: typeof BonusRoute
+  BuscarRoute: typeof BuscarRoute
+  CasosRoute: typeof CasosRoute
+  FavoritosRoute: typeof FavoritosRoute
+  LojaRoute: typeof LojaRoute
+  MapasRoute: typeof MapasRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +156,75 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/atualizacoes': {
+      id: '/atualizacoes'
+      path: '/atualizacoes'
+      fullPath: '/atualizacoes'
+      preLoaderRoute: typeof AtualizacoesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/biblioteca': {
+      id: '/biblioteca'
+      path: '/biblioteca'
+      fullPath: '/biblioteca'
+      preLoaderRoute: typeof BibliotecaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/bonus': {
+      id: '/bonus'
+      path: '/bonus'
+      fullPath: '/bonus'
+      preLoaderRoute: typeof BonusRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/buscar': {
+      id: '/buscar'
+      path: '/buscar'
+      fullPath: '/buscar'
+      preLoaderRoute: typeof BuscarRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/casos': {
+      id: '/casos'
+      path: '/casos'
+      fullPath: '/casos'
+      preLoaderRoute: typeof CasosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/favoritos': {
+      id: '/favoritos'
+      path: '/favoritos'
+      fullPath: '/favoritos'
+      preLoaderRoute: typeof FavoritosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/loja': {
+      id: '/loja'
+      path: '/loja'
+      fullPath: '/loja'
+      preLoaderRoute: typeof LojaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mapas': {
+      id: '/mapas'
+      path: '/mapas'
+      fullPath: '/mapas'
+      preLoaderRoute: typeof MapasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AtualizacoesRoute: AtualizacoesRoute,
+  BibliotecaRoute: BibliotecaRoute,
+  BonusRoute: BonusRoute,
+  BuscarRoute: BuscarRoute,
+  CasosRoute: CasosRoute,
+  FavoritosRoute: FavoritosRoute,
+  LojaRoute: LojaRoute,
+  MapasRoute: MapasRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
