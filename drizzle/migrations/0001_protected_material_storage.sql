@@ -1,0 +1,1 @@
+CREATE POLICY "Entitled material download" ON storage.objects FOR SELECT TO authenticated USING (bucket_id = 'protected-materials' AND EXISTS (SELECT 1 FROM public.content_items ci JOIN public.entitlements e ON e.product_id = ci.product_id WHERE ci.pdf_path = name AND e.user_id = auth.uid() AND e.active));

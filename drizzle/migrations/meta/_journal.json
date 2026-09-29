@@ -8,6 +8,13 @@
       "when": 1790723020755,
       "tag": "0000_visual_library_core",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1790723099700,
+      "tag": "0001_protected_material_storage",
+      "breakpoints": true
     }
   ]
 }
